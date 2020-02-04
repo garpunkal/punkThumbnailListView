@@ -1,0 +1,24 @@
+﻿
+.thumbnailListView .umb-content-list__details {
+    flex-grow: 1;
+}
+
+    .thumbnailListView .umb-content-list__details .umb-content-list__details-image {
+        text-align: right;
+    }
+
+        .thumbnailListView .umb-content-list__details .umb-content-list__details-image img {
+            max-height: 200px;
+        }
+
+.thumbnailListView .umb-table-body .umb-table-row .umb-table-cell > * {
+    white-space: normal;
+}
+
+.thumbnailListView .umb-table-body .umb-table-row {
+    min-height: 50px;
+}
+
+    .thumbnailListView .umb-table-body .umb-table-row.-unpublished {
+        opacity: .4;
+    }
