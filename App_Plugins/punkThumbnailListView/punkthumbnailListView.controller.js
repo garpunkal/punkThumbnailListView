@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    function ThumbnailListViewController($scope, listViewHelper, $location, mediaHelper, entityResource, notificationsService) {
+    function punkThumbnailListViewController($scope, listViewHelper, $location, mediaHelper, entityResource, notificationsService) {
 
         var vm = this;
 
@@ -93,5 +93,5 @@
         init();
     }
 
-    angular.module("umbraco").controller("ThumbnailListView.ThumbnailListViewController", ThumbnailListViewController);
+    angular.module("umbraco").controller("punkThumbnailListView.punkThumbnailListViewController", punkThumbnailListViewController);
 })();

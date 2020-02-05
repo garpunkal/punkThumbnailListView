@@ -51,7 +51,7 @@
         var directive = {
             restrict: 'E',
             replace: true,
-            templateUrl: '/App_Plugins/ThumbnailListView/umb-table-relations.html',
+            templateUrl: '/App_Plugins/punkThumbnailListView/umb-table-relations.html',
             scope: {
                 items: '=',
                 itemProperties: '=',

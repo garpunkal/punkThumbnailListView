@@ -1,9 +1,0 @@
-{
-    javascript: [	
-		'~/App_Plugins/ThumbnailListView/umb-table-relations.directive.js',
-        '~/App_Plugins/ThumbnailListView/thumbnailListView.controller.js'
-    ],
-    css: [
-        '~/App_Plugins/ThumbnailListView/thumbnailListView.css'
-    ]
-}
