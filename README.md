@@ -1,6 +1,9 @@
 # Umbraco Thumbnail List View
 
-A  app_plugin for Umbraco that allows you to view a ListView with a thumbnail image or link through to document information.
+An app_plugin for Umbraco that allows you to view a ListView with the following extras:
+
+- A thumbnail image
+- A title field from a linked document, e.g. article type
 
 It works with all the original functionality of ListView, including selections, sort and search. 
 
