@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     "use strict";
 
     function punkThumbnailListViewController($scope, listViewHelper, $location, mediaHelper, entityResource, notificationsService) {
@@ -55,10 +55,11 @@
 
                     angular.forEach($scope.items, function (item) {
 
+
                         try {
-                            if (item[column.alias].indexOf('umb://media/') === 0) {
-                                entityResource.getById(getIdFromUdi(item[column.alias]), "Media")
-                                    .then(function (media) {
+                            if (item[column.alias][0].mediaKey) {
+                                entityResource.getById(item[column.alias][0].mediaKey, "Media")
+                                    .then(function (media) {                                       
                                         notificationsService.removeAll();
                                         item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
                                         column.allowSorting = false;
