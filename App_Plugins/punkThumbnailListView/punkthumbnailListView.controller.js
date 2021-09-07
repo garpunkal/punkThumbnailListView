@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     "use strict";
 
     function punkThumbnailListViewController($scope, listViewHelper, $location, mediaHelper, entityResource, notificationsService) {
