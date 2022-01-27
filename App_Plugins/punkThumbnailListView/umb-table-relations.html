@@ -54,11 +54,11 @@
                     <div ng-switch on="column.header.toLowerCase()" class="umb-content-list__details">
 
                         <div ng-switch-when="thumbnail" class="umb-content-list__details-image">
-                            <img ng-src="{{item[column.alias]}}" ng-if="item[column.alias] !== '' && item[column.alias].indexOf('umb://') !== 0" alt="{{item.name}}" />
+                            <img ng-src="{{item[column.alias]}}" ng-if="item[column.alias] !== '' && item[column.alias].indexOf('umb://') !== 0" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
                         </div>
 
                         <div ng-switch-when="image" class="umb-content-list__details-image">
-                            <img ng-src="{{item[column.alias]}}" ng-if="item[column.alias] !== '' && item[column.alias].indexOf('umb://') !== 0" alt="{{item.name}}" />
+                            <img ng-src="{{item[column.alias]}}" ng-if="item[column.alias] !== '' && item[column.alias].indexOf('umb://') !== 0" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
                         </div>
 
                         <div ng-switch-default>

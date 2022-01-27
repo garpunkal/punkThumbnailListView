@@ -7,8 +7,9 @@
         text-align: right;
     }
 
+
         .thumbnailListView .umb-content-list__details .umb-content-list__details-image img {
-            max-height: 200px;
+            object-fit: cover;
         }
 
 .thumbnailListView .umb-table-body .umb-table-row .umb-table-cell > * {
