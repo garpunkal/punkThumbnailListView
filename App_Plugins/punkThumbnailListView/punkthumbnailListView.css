@@ -23,3 +23,17 @@
     .thumbnailListView .umb-table-body .umb-table-row.-unpublished {
         opacity: .4;
     }
+
+.thumbnailListView .umb-table-head .umb-table-head__link-image {
+    justify-content: center;
+}
+
+
+.thumbnailListView .umb-table-head .full-width {
+    width:100%;
+}
+.thumbnailListView .umb-table-head .centered {
+    justify-content: center;
+    display: flex;
+}
+

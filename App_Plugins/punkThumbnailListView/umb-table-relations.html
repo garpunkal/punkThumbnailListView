@@ -17,12 +17,26 @@
                     </a>
                 </div>
                 <div class="umb-table-cell" ng-repeat="column in itemProperties">
-                    <a class="umb-table-head__link" title="Sort by {{ column.header }}" href="#"
-                       ng-click="sort(column.alias, column.allowSorting, column.isSystem)"
-                       ng-class="{'sortable':column.allowSorting}" prevent-default>
-                        <span ng-bind="column.header"></span>
-                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection(column.alias, 'asc'), 'icon-navigation-down': isSortDirection(column.alias, 'desc')}"></i>
-                    </a>
+                    <div ng-switch on="column.header.toLowerCase()" class="full-width ">
+                        <div ng-switch-when="thumbnail|image|logo|listingImage" ng-switch-when-separator="|" class="full-width centered">
+                            <a class="umb-table-head__link umb-table-head__link-image" title="Sort by {{ column.header }}" href="#" 
+                               ng-click="sort(column.alias, column.allowSorting, column.isSystem)"
+                               ng-class="{'sortable':column.allowSorting}" prevent-default>
+                                <span ng-bind="column.header"></span>
+                                <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection(column.alias, 'asc'), 'icon-navigation-down': isSortDirection(column.alias, 'desc')}"></i>
+                            </a>
+                        </div>                      
+                        <div ng-switch-default class="full-width">
+                            <a class="umb-table-head__link" title="Sort by {{ column.header }}" href="#" 
+                               ng-click="sort(column.alias, column.allowSorting, column.isSystem)"
+                               ng-class="{'sortable':column.allowSorting}" prevent-default>
+                                <span ng-bind="column.header"></span>
+                                <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection(column.alias, 'asc'), 'icon-navigation-down': isSortDirection(column.alias, 'desc')}"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -53,11 +67,7 @@
 
                     <div ng-switch on="column.header.toLowerCase()" class="umb-content-list__details">
 
-                        <div ng-switch-when="thumbnail" class="umb-content-list__details-image">
-                            <img ng-src="{{item[column.alias]}}" ng-if="item[column.alias] !== '' && item[column.alias].indexOf('umb://') !== 0" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
-                        </div>
-
-                        <div ng-switch-when="image" class="umb-content-list__details-image">
+                       <div ng-switch-when="thumbnail|image|logo|listingImage" ng-switch-when-separator="|" class="umb-content-list__details-image">
                             <img ng-src="{{item[column.alias]}}" ng-if="item[column.alias] !== '' && item[column.alias].indexOf('umb://') !== 0" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
                         </div>
 
