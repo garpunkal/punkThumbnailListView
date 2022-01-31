@@ -57,41 +57,44 @@
 
 
                         try {
-                            if (item[column.alias][0].mediaKey) {
-                                entityResource.getById(item[column.alias][0].mediaKey, "Media")
-                                    .then(function (media) {                                       
-                                        notificationsService.removeAll();
-                                        item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
-                                        column.allowSorting = false;
-                                    }, function (err) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = '';
-                                        column.allowSorting = false;
-                                    });
-                            }
-                            if (item[column.alias].indexOf('umb://media/') === 0) {
-                                entityResource.getById(getIdFromUdi(item[column.alias]), "Media")
-                                    .then(function (media) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
-                                        column.allowSorting = false;
-                                    }, function (err) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = '';
-                                        column.allowSorting = false;
-                                    });
-                            }
-                            if (item[column.alias].indexOf('umb://document/') === 0) {
-                                entityResource.getById(getIdFromUdi(item[column.alias]), "Document")
-                                    .then(function (document) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = document.name;
-                                        column.allowSorting = false;
-                                    }, function (err) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = '';
-                                        column.allowSorting = false;
-                                    });
+
+                            if (!item.trashed) {
+                                if (item[column.alias][0].mediaKey) {
+                                    entityResource.getById(item[column.alias][0].mediaKey, "Media")
+                                        .then(function (media) {
+                                            notificationsService.removeAll();
+                                            item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
+                                            column.allowSorting = false;
+                                        }, function (err) {
+                                            notificationsService.removeAll();
+                                            item[column.alias] = '';
+                                            column.allowSorting = false;
+                                        });
+                                }
+                                if (item[column.alias].indexOf('umb://media/') === 0) {
+                                    entityResource.getById(getIdFromUdi(item[column.alias]), "Media")
+                                        .then(function (media) {
+                                            notificationsService.removeAll();
+                                            item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
+                                            column.allowSorting = false;
+                                        }, function (err) {
+                                            notificationsService.removeAll();
+                                            item[column.alias] = '';
+                                            column.allowSorting = false;
+                                        });
+                                }
+                                if (item[column.alias].indexOf('umb://document/') === 0) {
+                                    entityResource.getById(getIdFromUdi(item[column.alias]), "Document")
+                                        .then(function (document) {
+                                            notificationsService.removeAll();
+                                            item[column.alias] = document.name;
+                                            column.allowSorting = false;
+                                        }, function (err) {
+                                            notificationsService.removeAll();
+                                            item[column.alias] = '';
+                                            column.allowSorting = false;
+                                        });
+                                }
                             }
 
                         } catch (err) {
