@@ -55,51 +55,51 @@
 
                     angular.forEach($scope.items, function (item) {
 
-
                         try {
-
-                            if (!item.trashed) {
-                                if (item[column.alias][0].mediaKey) {
-                                    entityResource.getById(item[column.alias][0].mediaKey, "Media")
-                                        .then(function (media) {
-                                            notificationsService.removeAll();
+                            
+                            if (item[column.alias][0] && item[column.alias][0].mediaKey) {
+                                entityResource.getById(item[column.alias][0].mediaKey, "Media")
+                                    .then(function (media) {
+                                        if (!media.trashed) {
                                             item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
                                             column.allowSorting = false;
-                                        }, function (err) {
-                                            notificationsService.removeAll();
-                                            item[column.alias] = '';
-                                            column.allowSorting = false;
-                                        });
-                                }
-                                if (item[column.alias].indexOf('umb://media/') === 0) {
-                                    entityResource.getById(getIdFromUdi(item[column.alias]), "Media")
-                                        .then(function (media) {
-                                            notificationsService.removeAll();
+                                        }
+                                    })
+                                    .catch(function (error) {
+                                        notificationsService.removeAll();
+                                    });
+                            }
+                      
+                            if (item[column.alias].indexOf('umb://media/') === 0) {
+                                entityResource.getById(getIdFromUdi(item[column.alias]), "Media")
+                                    .then(function (media) {
+                                        if (!media.trashed) {
                                             item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
                                             column.allowSorting = false;
-                                        }, function (err) {
-                                            notificationsService.removeAll();
-                                            item[column.alias] = '';
-                                            column.allowSorting = false;
-                                        });
-                                }
-                                if (item[column.alias].indexOf('umb://document/') === 0) {
-                                    entityResource.getById(getIdFromUdi(item[column.alias]), "Document")
-                                        .then(function (document) {
-                                            notificationsService.removeAll();
+                                        }
+                                    })
+                                    .catch(function (error) {
+                                        notificationsService.removeAll();
+                                    });
+                            }
+                       
+                            if (item[column.alias].indexOf('umb://document/') === 0) {
+                                entityResource.getById(getIdFromUdi(item[column.alias]), "Document")
+                                    .then(function (document) {
+                                        if (!document.trashed) {
                                             item[column.alias] = document.name;
                                             column.allowSorting = false;
-                                        }, function (err) {
-                                            notificationsService.removeAll();
-                                            item[column.alias] = '';
-                                            column.allowSorting = false;
-                                        });
-                                }
-                            }
+                                        }
+                                    })
+                                    .catch(function (error) {
+                                        notificationsService.removeAll();
+                                    });
 
+                            }
                         } catch (err) {
                             console.log(err);
                         };
+
                     });
                 }
 
