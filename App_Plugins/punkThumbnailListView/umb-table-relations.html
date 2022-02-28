@@ -66,11 +66,11 @@
                 <div class="umb-table-cell" ng-repeat="column in itemProperties">
 
                     <div ng-switch on="column.header.toLowerCase()" class="umb-content-list__details">
-
-                       <div ng-switch-when="thumbnail|image|logo|listingImage" ng-switch-when-separator="|" class="umb-content-list__details-image">
-                            <img ng-src="{{item[column.alias]}}" ng-if="item[column.alias] !== '' && item[column.alias].indexOf('umb://') !== 0" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
+                                               
+                        <div ng-if="item[column.alias].length > 0"
+                             ng-switch-when="thumbnail|image|logo|listingImage" ng-switch-when-separator="|" class="umb-content-list__details-image">
+                            <img ng-src="{{item[column.alias]}}" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
                         </div>
-
                         <div ng-switch-default>
                             <span ng-if="item[column.alias].indexOf('umb://') !== 0">{{item[column.alias]}}</span>
                         </div>
