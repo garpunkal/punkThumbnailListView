@@ -14,11 +14,11 @@
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Version>1.0.1.0</Version>
+		<Version>1.0.3.0</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="App_Plugins\punkHangfire\**\*.*">
+		<Content Include="App_Plugins\punkThumbnailListView\**\*.*">
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</Content>
