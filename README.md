@@ -7,6 +7,14 @@ An app_plugin for Umbraco that allows you to view a ListView with the following 
 
 It works with all the original functionality of ListView, including selections, sort and search. 
 
+# Usage 
+
+Just create a new listview in Umbraco, add your custom fields for imagery or linked relations. 
+
+then use this path for a view: /app_plugins/punkThumbnailListView/punkthumbnailListView.html. 
+
+It should display your images and relational titles in the listview. 
+
 # Nuget
 
 `Install-Package punkThumbnailListView`
