@@ -1,0 +1,22 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <PunkListViewContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\PunkListView\**\*.*</PunkListViewContentFilesPath>
+    </PropertyGroup>
+    <Target Name="CopyPunkListViewAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <PunkListViewContentFiles Include="$(PunkListViewContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying PunkListView files: $(PunkListViewContentFilesPath) - #@(PunkListViewContentFiles->Count()) files"  Importance="high" />
+        <Copy
+            SourceFiles="@(PunkListViewContentFiles)"
+            DestinationFiles="@(PunkListViewContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\PunkListView\%(RecursiveDir)%(Filename)%(Extension)')"
+            SkipUnchangedFiles="true" />
+    </Target>
+    <Target Name="ClearPunkListViewAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <PunkListViewDir Include="$(MSBuildProjectDirectory)\App_Plugins\PunkListView\" />
+        </ItemGroup>
+        <Message Text="Clear old PunkListView data"  Importance="high" />
+        <RemoveDir Directories="@(PunkListViewDir)"  />
+    </Target>
+</Project>

@@ -1,20 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<ContentTargetFolders>.</ContentTargetFolders>
-		<Product>punk.ThumbnailListView</Product>
-		<PackageId>punk.ThumbnailListView</PackageId>
-		<Title>punk.ThumbnailListView</Title>
+		<Product>punkThumbnailListView</Product>
+		<PackageId>punkThumbnailListView</PackageId>
+		<Title>punkThumbnailListView</Title>
 		<Description>A plugin to enable a listview that shows images and relational content</Description>
 		<PackageTags>umbraco plugin package</PackageTags>
-		<RootNamespace>punk.ThumbnailListView</RootNamespace>
+		<RootNamespace>punkThumbnailListView</RootNamespace>
 		<Authors>Gareth Wright</Authors>
 		<PackageProjectUrl>https://github.com/garpunkal/punkThumbnailListView</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Version>1.0.3.0</Version>
+		<Version>1.1.1.0</Version>
+		<RepositoryUrl>https://github.com/garpunkal/punkThumbnailListView</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -26,7 +28,7 @@
 			<Pack>True</Pack>
 			<PackagePath>buildTransitive</PackagePath>
 		</None>
-		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="../../LICENSE" Pack="true" PackagePath="" />

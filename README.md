@@ -9,9 +9,9 @@ It works with all the original functionality of ListView, including selections, 
 
 # Nuget
 
-`Install-Package punk.punkThumbnailListView`
+`Install-Package punkThumbnailListView`
 
-https://www.nuget.org/packages/punk.punkThumbnailListView/
+https://www.nuget.org/packages/punkThumbnailListView/
 
 ### Compatibility
 
