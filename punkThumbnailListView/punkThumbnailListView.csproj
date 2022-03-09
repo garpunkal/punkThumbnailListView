@@ -27,10 +27,14 @@
 			<Pack>True</Pack>
 			<PackagePath>buildTransitive</PackagePath>
 		</None>
-		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Include="../../LICENSE" Pack="true" PackagePath="" />
-		<None Include="../../logo.png" Pack="true" PackagePath="" />
+		<None Include="..\LICENSE" Pack="true" PackagePath="" />
+		<None Include="..\logo.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="App_Plugins\punkThumbnailListView\" />
+	  <Folder Include="build\" />
 	</ItemGroup>
 </Project>

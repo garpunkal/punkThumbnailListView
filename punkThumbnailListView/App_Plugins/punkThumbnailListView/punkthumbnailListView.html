@@ -1,0 +1,27 @@
+﻿<div ng-controller="punkThumbnailListView.punkThumbnailListViewController as vm">
+    <div class="thumbnailListView">
+        <umb-table-relations 
+                   ng-if="items"
+                   items="items"
+                   allow-select-all="options.bulkActionsAllowed"
+                   item-properties="options.includeProperties"
+                   on-select="vm.selectItem"
+                   on-click="vm.clickItem"
+                   on-select-all="vm.selectAll"
+                   on-selected-all="vm.isSelectedAll"
+                   on-sorting-direction="vm.isSortDirection"
+                   on-sort="vm.sort"
+                   >
+        </umb-table-relations>
+
+        <umb-empty-state ng-if="!items && options.filter.length === 0"
+                         position="center">
+            <div><localize key="content_listViewNoContent">No content has been added</localize></div>
+        </umb-empty-state>
+    </div>
+
+    <umb-empty-state ng-if="!items && options.filter.length > 0"
+                     position="center">
+        <localize key="general_searchNoResult"></localize>
+    </umb-empty-state>
+</div>

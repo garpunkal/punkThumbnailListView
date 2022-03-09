@@ -1,0 +1,9 @@
+{
+    javascript: [	
+		'~/App_Plugins/punkThumbnailListView/umb-table-relations.directive.js',
+        '~/App_Plugins/punkThumbnailListView/punkthumbnailListView.controller.js'
+    ],
+    css: [
+        '~/App_Plugins/punkThumbnailListView/punkthumbnailListView.css'
+    ]
+}
