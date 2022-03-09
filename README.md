@@ -21,6 +21,6 @@ It should display your images and relational titles in the listview.
 
 https://www.nuget.org/packages/punkThumbnailListView/
 
-### Compatibility
+# Compatibility
 
-- Umbraco 9+
+- Umbraco 9+ through nuget package but files should work on older version of Umbraco. 
