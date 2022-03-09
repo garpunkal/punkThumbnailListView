@@ -7,13 +7,19 @@ An app_plugin for Umbraco that allows you to view a ListView with the following 
 
 It works with all the original functionality of ListView, including selections, sort and search. 
 
+# Nuget
+
+`Install-Package punk.punkThumbnailListView`
+
+https://www.nuget.org/packages/punk.punkThumbnailListView/
+
 ### Compatibility
 
-- Umbraco 8+
-- Umbraco 7+ 
+- Umbraco 9+
   
 ### Screenshot
 ![Screenshot](screenshot.png)
 
 ### DataType
 ![DataType setup](datatype.png)
+
