@@ -14,7 +14,6 @@
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Version>1.1.1.0</Version>
 		<RepositoryUrl>https://github.com/garpunkal/punkThumbnailListView</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
