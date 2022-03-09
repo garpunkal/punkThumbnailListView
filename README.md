@@ -9,8 +9,7 @@ It works with all the original functionality of ListView, including selections, 
 
 ### Compatibility
 
-- Umbraco 8+
-- Umbraco 7+ 
+- Umbraco 9+
   
 ### Screenshot
 ![Screenshot](screenshot.png)
