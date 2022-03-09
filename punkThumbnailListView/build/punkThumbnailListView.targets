@@ -1,22 +1,27 @@
-﻿﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
     <PropertyGroup>
-        <PunkListViewContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\PunkListView\**\*.*</PunkListViewContentFilesPath>
+        <PunkThumbnailListViewContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\punkThumbnailListView\**\*.*</PunkThumbnailListViewContentFilesPath>
     </PropertyGroup>
-    <Target Name="CopyPunkListViewAssets" BeforeTargets="Build">
+
+    <Target Name="CopyPunkThumbnailListViewAssets" BeforeTargets="Build">
         <ItemGroup>
-            <PunkListViewContentFiles Include="$(PunkListViewContentFilesPath)" />
+            <PunkThumbnailListViewContentFiles Include="$(PunkThumbnailListViewContentFilesPath)" />
         </ItemGroup>
-        <Message Text="Copying PunkListView files: $(PunkListViewContentFilesPath) - #@(PunkListViewContentFiles->Count()) files"  Importance="high" />
+        <Message Text="Copying punkThumbnailListView files: $(PunkThumbnailListViewContentFilesPath) - #@(PunkThumbnailListViewContentFiles->Count()) files"  Importance="high" />
         <Copy
-            SourceFiles="@(PunkListViewContentFiles)"
-            DestinationFiles="@(PunkListViewContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\PunkListView\%(RecursiveDir)%(Filename)%(Extension)')"
+            SourceFiles="@(PunkThumbnailListViewContentFiles)"
+            DestinationFiles="@(PunkThumbnailListViewContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\punkThumbnailListView\%(RecursiveDir)%(Filename)%(Extension)')"
             SkipUnchangedFiles="true" />
+
     </Target>
-    <Target Name="ClearPunkListViewAssets" BeforeTargets="Clean">
+
+    <Target Name="ClearPunkThumbnailListViewAssets" BeforeTargets="Clean">
         <ItemGroup>
-            <PunkListViewDir Include="$(MSBuildProjectDirectory)\App_Plugins\PunkListView\" />
+            <PunkThumbnailListViewDir Include="$(MSBuildProjectDirectory)\App_Plugins\punkThumbnailListView\" />
         </ItemGroup>
-        <Message Text="Clear old PunkListView data"  Importance="high" />
-        <RemoveDir Directories="@(PunkListViewDir)"  />
+        <Message Text="Clear old punkThumbnailListView data"  Importance="high" />
+        <RemoveDir Directories="@(PunkThumbnailListViewDir)"  />
     </Target>
+
 </Project>
