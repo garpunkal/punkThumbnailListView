@@ -1,26 +1,36 @@
-# Umbraco Thumbnail List View
+# Thumbnail List View
+
+[![.github/workflows/release.yml](https://github.com/garpunkal/punkThumbnailListView/actions/workflows/release.yml/badge.svg)](https://github.com/garpunkal/punkThumbnailListView/actions/workflows/release.yml)
 
 An app_plugin for Umbraco that allows you to view a ListView with the following extras:
 
-- A image with the field alias: thumbnail|image|logo|listingImage
-- A title field from a linked document, e.g. article type
+- A image with the field alias: (thumbnail, image, logo, listingImage) 
+- A name field from a linked document.
 
 It works with all the original functionality of ListView, including selections, sort and search. 
 
-# Usage 
+## Usage 
 
 Just create a new listview in Umbraco, add your custom fields for imagery or linked relations. 
+then use this path for a view: 
 
-then use this path for a view: /app_plugins/punkThumbnailListView/punkthumbnailListView.html. 
+`/app_plugins/punkThumbnailListView/punkthumbnailListView.html`
 
 It should display your images and relational titles in the listview. 
 
-# Nuget
+## Nuget
 
 `Install-Package punkThumbnailListView`
 
 https://www.nuget.org/packages/punkThumbnailListView/
 
-# Compatibility
+## Compatibility
 
-- Umbraco 9+ through nuget package but files should work on older version of Umbraco. 
+- Umbraco 9+ 
+## Screenshots
+  
+### ListView
+![Screenshot](https://github.com/garpunkal/punkThumbnailListView/raw/main/listview.jpg)
+
+### DataType
+![DataType setup](https://github.com/garpunkal/punkThumbnailListView/raw/main/datatype.jpg)
