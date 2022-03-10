@@ -30,7 +30,7 @@ https://www.nuget.org/packages/punkThumbnailListView/
 ## Screenshots
   
 ### ListView
-![Screenshot](https://github.com/garpunkal/punkThumbnailListView/raw/main/listview.jpg)
+![Screenshot](https://raw.github.com/garpunkal/punkThumbnailListView/main/listview.jpg)
 
 ### DataType
-![DataType setup](https://github.com/garpunkal/punkThumbnailListView/raw/main/datatype.jpg)
+![DataType setup](https://raw.github.com/garpunkal/punkThumbnailListView/main/datatype.jpg)
