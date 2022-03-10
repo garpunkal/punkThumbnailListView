@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "punkDropDownList", "punkDropDownList\punkDropDownList.csproj", "{A78CA061-B6B2-4B33-8E85-06C786A028E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "punkThumbnailListView", "punkThumbnailListView\punkThumbnailListView.csproj", "{A78CA061-B6B2-4B33-8E85-06C786A028E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
