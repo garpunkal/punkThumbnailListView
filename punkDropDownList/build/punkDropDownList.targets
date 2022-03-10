@@ -1,0 +1,27 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <PunkDropDownListContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\PunkDropDownList\**\*.*</PunkDropDownListContentFilesPath>
+    </PropertyGroup>
+
+    <Target Name="CopyPunkDropDownListAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <PunkDropDownListContentFiles Include="$(PunkDropDownListContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying PunkDropDownList files: $(PunkDropDownListContentFilesPath) - #@(PunkDropDownListContentFiles->Count()) files"  Importance="high" />
+        <Copy
+            SourceFiles="@(PunkDropDownListContentFiles)"
+            DestinationFiles="@(PunkDropDownListContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\PunkDropDownList\%(RecursiveDir)%(Filename)%(Extension)')"
+            SkipUnchangedFiles="true" />
+
+    </Target>
+
+    <Target Name="ClearPunkDropDownListAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <PunkDropDownListDir Include="$(MSBuildProjectDirectory)\App_Plugins\PunkDropDownList\" />
+        </ItemGroup>
+        <Message Text="Clear old PunkDropDownList data"  Importance="high" />
+        <RemoveDir Directories="@(PunkDropDownListDir)"  />
+    </Target>
+
+</Project>

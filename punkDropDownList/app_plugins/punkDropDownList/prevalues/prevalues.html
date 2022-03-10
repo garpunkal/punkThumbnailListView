@@ -1,0 +1,29 @@
+﻿<div ng-controller="punkDropDownList.PrevaluesController">
+
+    <table class="table table-striped table-responsive table-hover prevaluesTable">
+        <thead>
+            <tr>
+                <th>Text</th>
+                <th>Key</th>             
+                <th></th>
+            </tr>
+        </thead>
+        <tbody ui-sortable="sortableOptions" ng-model="model.value.items">
+            <tr ng-repeat="item in model.value.items">
+                <td>
+                    <input type="text" ng-model="item.value" />
+                </td>
+                <td>
+                    <input type="text" ng-model="item.key" />
+                </td>                
+                <td class="actions">
+                    <span class="btn btn-default icon icon-height sortHandle" style="font-size: 18px;" title="sort"></span>
+                    <span ng-click="removeItem($index)" class="btn btn-danger icon icon-trash" title="remove"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-default add-item" ng-click="addItem()">Add value</button>
+
+</div>

@@ -3,23 +3,23 @@
 		<TargetFramework>net5.0</TargetFramework>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<ContentTargetFolders>.</ContentTargetFolders>
-		<Product>punkThumbnailListView</Product>
-		<PackageId>punkThumbnailListView</PackageId>
-		<Title>punkThumbnailListView</Title>
-		<Description>A plugin to enable a listview that shows images and relational content</Description>
+		<Product>punkDropDownList</Product>
+		<PackageId>punkDropDownList</PackageId>
+		<Title>punkDropDownList</Title>
+		<Description>An plugin for Umbraco that provides an Umbraco Drop Down List with Text and Key.</Description>
 		<PackageTags>umbraco plugin package</PackageTags>
-		<RootNamespace>punkThumbnailListView</RootNamespace>
+		<RootNamespace>punkDropDownList</RootNamespace>
 		<Authors>Gareth Wright</Authors>
-		<PackageProjectUrl>https://github.com/garpunkal/punkThumbnailListView</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/garpunkal/punkDropDownList</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/garpunkal/punkThumbnailListView</RepositoryUrl>
+		<RepositoryUrl>https://github.com/garpunkal/punkDropDownList</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="App_Plugins\punkThumbnailListView\**\*.*">
+		<Content Include="App_Plugins\punkDropDownList\**\*.*">
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</Content>
@@ -34,7 +34,7 @@
 		<None Include="..\logo.png" Pack="true" PackagePath="" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="App_Plugins\punkThumbnailListView\" />
+	  <Folder Include="App_Plugins\punkDropDownList\" />
 	  <Folder Include="build\" />
 	</ItemGroup>
 </Project>

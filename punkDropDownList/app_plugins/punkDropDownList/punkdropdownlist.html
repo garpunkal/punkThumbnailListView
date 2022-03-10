@@ -1,0 +1,10 @@
+﻿<div ng-controller="punkDropDownListController">
+    <div class="umb-loading" ng-show="!isLoaded">Loading ...</div>
+    <div ng-show="isLoaded && !items.length">There are no items to display.</div>
+    <div ng-show="isLoaded && items.length">
+        <select id="{{model.alias}}" class="umb-property-editor umb-dropdown" ng-model="model.value" ng-change="click()" ng-options="item.key as item.value for item in items">
+            <option value=""></option>
+        </select>   
+    </div>
+
+</div>

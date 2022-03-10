@@ -1,0 +1,28 @@
+﻿﻿{
+    propertyEditors: [     
+	{
+			alias: 'punkDropDownList',
+			name: 'PunkDropDownList',
+			editor:{
+				valueType: "JSON",
+				view: '~/App_Plugins/punkDropDownList/punkDropDownList.html',
+				hideLabel: false
+			},
+			prevalues : {
+				fields: [									
+					{
+					    label: "Dropdown list values",
+					    description: "Add and remove values for the list.",
+					    key: "items",
+					    view: "~/App_Plugins/punkDropDownList/prevalues/prevalues.html"
+					}         
+				]
+			}
+        }
+	],
+    javascript: [		
+		'~/App_Plugins/punkDropDownList/punkDropDownList.controller.js',
+		'~/App_Plugins/punkDropDownList/Prevalues/prevalues.controller.js'	
+    ],
+    css: [ ]
+}

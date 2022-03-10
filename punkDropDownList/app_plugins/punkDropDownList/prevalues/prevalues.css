@@ -1,0 +1,33 @@
+﻿
+.prevaluesTable tr td.actions span {
+    padding: 2px 4px;
+}
+
+    .prevaluesTable tr td.actions span.sortHandle {
+        cursor: move;
+    }
+
+.dtgPrevaluesProperties {
+    margin-top: 10px;
+}
+
+.prevaluesTable .umb-sortable-thumbnails li {
+    width: 80px !important;
+    height: 66px !important;
+}
+
+.prevaluesTable .list-icons li {
+    padding-left: 25px;
+}
+
+    .prevaluesTable .list-icons li > i.icon {
+        display: none;
+    }
+
+.prevaluesTable input, .prevaluesTable textarea {
+    width: 90%;
+}
+
+.add-item {
+    margin-bottom: 25px;
+}

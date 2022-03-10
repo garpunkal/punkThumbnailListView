@@ -1,25 +1,14 @@
-# Umbraco Thumbnail List View
+# punkDropDownList
 
-An app_plugin for Umbraco that allows you to view a ListView with the following extras:
+An app_plugin for Umbraco that provides an Umbraco Drop Down List with Text and Key.
 
-- A image with the field alias: thumbnail|image|logo|listingImage
-- A title field from a linked document, e.g. article type
-
-It works with all the original functionality of ListView, including selections, sort and search. 
-
-# Usage 
-
-Just create a new listview in Umbraco, add your custom fields for imagery or linked relations. 
-
-then use this path for a view: /app_plugins/punkThumbnailListView/punkthumbnailListView.html. 
-
-It should display your images and relational titles in the listview. 
+There is an included PropertyValueConverter to provide you with the value of the selected item in the CMS. 
 
 # Nuget
 
-`Install-Package punkThumbnailListView`
+`Install-Package punkDropDownList`
 
-https://www.nuget.org/packages/punkThumbnailListView/
+https://www.nuget.org/packages/punkDropDownList/
 
 # Compatibility
 
