@@ -7,7 +7,7 @@
 		<PackageId>punkThumbnailListView</PackageId>
 		<Title>punkThumbnailListView</Title>
 		<Description>A plugin to enable a listview that shows images and relational content</Description>
-		<PackageTags>umbraco plugin package</PackageTags>
+		<PackageTags>umbraco-marketplace</PackageTags>
 		<RootNamespace>punkThumbnailListView</RootNamespace>
 		<Authors>Gareth Wright</Authors>
 		<PackageProjectUrl>https://github.com/garpunkal/punkThumbnailListView</PackageProjectUrl>
