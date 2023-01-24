@@ -44,6 +44,12 @@
                 if (!column.isSystem) {
                     angular.forEach($scope.items, function (item) {
                         try {
+
+                            if (item[column.alias].src) {
+                                item[column.alias] = mediaHelper.getThumbnailFromPath(item[column.alias].src);
+                                clearColumn(column);
+                            }
+
                             if (item[column.alias][0].mediaKey) {
                                 mediaResource.getById(item[column.alias][0].mediaKey)
                                     .then(function (media) {
@@ -51,6 +57,7 @@
                                         clearColumn(column);
                                     }, (err) => console.log(err));
                             }
+
                             if (item[column.alias].indexOf('umb://media/') === 0) {
                                 mediaResource.getById(getIdFromUdi(item[column.alias]))
                                     .then(function (media) {
@@ -58,6 +65,7 @@
                                         clearColumn(column);
                                     }, (err) => console.log(err));
                             }
+
                             if (item[column.alias].indexOf('umb://document/') === 0) {
                                 entityResource.getById(getIdFromUdi(item[column.alias]), "Document")
                                     .then(function (document) {
@@ -67,11 +75,22 @@
                                         }
                                     }, (err) => console.log(err));
                             }
+
+
                         } catch { }
                     });
                 }
 
             });
+        }
+
+        function isJsonString(str) {
+            try {
+                JSON.parse(str);
+            } catch (e) {
+                return false;
+            }
+            return true;
         }
 
         function clearColumn(column) {

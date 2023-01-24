@@ -25,7 +25,7 @@
 
 
                     <div ng-switch on="column.header.toLowerCase()" class="full-width ">
-                        <div ng-switch-when="thumbnail|image|logo|listingImage" ng-switch-when-separator="|" class="full-width centered">
+                        <div ng-switch-when="thumbnail|image|logo|listingImage|mainImage|heroImage" ng-switch-when-separator="|" class="full-width centered">
                             <button type="button"
                                     class="umb-table-head__link umb-table-head__link-image"
                                     ng-click="vm.sort(column.alias, column.allowSorting, column.isSystem)"
@@ -81,17 +81,16 @@
                             <div ng-switch on="column.header.toLowerCase()" class="umb-content-list__details">
 
                                 <div ng-if="item[column.alias].indexOf('/umbraco/') !== -1"
-                                     ng-switch-when="thumbnail|image|logo|listingImage"
+                                     ng-switch-when="thumbnail|image|logo|listingImage|mainImage|heroImage"
                                      ng-switch-when-separator="|"
-                                    
                                      class="umb-content-list__details-image">
-                                    <img                                          
-                                         ng-src="{{item[column.alias]}}"
+                               
+                                    <img ng-src="{{item[column.alias]}}"
                                          alt="{{item.name}}"
                                          class="umb-avatar umb-avatar--xl " />
                                 </div>
 
-                                <div ng-switch-default>
+                                <div ng-switch-default>                               
                                     {{item[column.alias].expression ? item[column.alias].expression({value: item[column.alias].value}) : item[column.alias]}}
                                 </div>
                             </div>
