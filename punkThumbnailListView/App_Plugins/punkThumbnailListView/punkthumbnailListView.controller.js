@@ -49,7 +49,7 @@
                                 item[column.alias] = mediaHelper.getThumbnailFromPath(item[column.alias].src);
                                 clearColumn(column);
                             }
-
+ 
                             if (item[column.alias][0].mediaKey) {
                                 mediaResource.getById(item[column.alias][0].mediaKey)
                                     .then(function (media) {
