@@ -8,7 +8,7 @@
              on-drag-leave="vm.dragLeave()"
              on-drag-end="vm.dragLeave()"
              on-drag-enter="vm.dragEnter()">
-
+   
             <umb-file-dropzone ng-if="!vm.isRecycleBin && vm.acceptedMediatypes.length > 0"
                                accepted-mediatypes="vm.acceptedMediatypes"
                                parent-id="{{vm.nodeId}}"
