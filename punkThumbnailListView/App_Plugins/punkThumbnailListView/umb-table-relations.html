@@ -77,13 +77,20 @@
                     <span title="{{column.header}}: {{item[column.alias].expression ? item[column.alias].expression({value: item[column.alias].value}) : item[column.alias]}}" class="umb-content-list__span">
 
                         <div ng-if="!column.isSensitive">
+                         
                             <div ng-switch on="column.header.toLowerCase()" class="umb-content-list__details">
-                                <div ng-if="item[column.alias].length > 0"
+
+                                <div ng-if="item[column.alias].indexOf('/umbraco/') !== -1"
                                      ng-switch-when="thumbnail|image|logo|listingImage"
                                      ng-switch-when-separator="|"
+                                    
                                      class="umb-content-list__details-image">
-                                    <img ng-if="item[column.alias]" ng-src="{{item[column.alias]}}" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
+                                    <img                                          
+                                         ng-src="{{item[column.alias]}}"
+                                         alt="{{item.name}}"
+                                         class="umb-avatar umb-avatar--xl " />
                                 </div>
+
                                 <div ng-switch-default>
                                     {{item[column.alias].expression ? item[column.alias].expression({value: item[column.alias].value}) : item[column.alias]}}
                                 </div>

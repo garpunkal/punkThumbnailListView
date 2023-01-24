@@ -16,6 +16,11 @@
             object-fit: cover;
         }
 
+
+        .thumbnailListView .umb-content-list__span .umb-content-list__details .umb-content-list__details-image img.umb-avatar {
+            border:1px solid #000;
+        }
+
 .thumbnailListView .umb-table-body .umb-table-row .umb-table-cell > * {
     white-space: normal;
 }

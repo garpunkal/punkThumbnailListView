@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    function punkThumbnailListViewController($scope, listViewHelper, $location, mediaHelper, entityResource, notificationsService) {
+    function punkThumbnailListViewController($scope, listViewHelper, $location, mediaHelper, mediaResource, entityResource, notificationsService) {
 
         var vm = this;
         var umbracoSettings = Umbraco.Sys.ServerVariables.umbracoSettings;
@@ -38,63 +38,45 @@
                 mediaTypeHelper.getAllowedImagetypes(vm.nodeId).then(function (types) {
                     vm.acceptedMediatypes = types;
                 });
-            }    
+            }
 
             angular.forEach($scope.options.includeProperties, function (column) {
-
-                if (!column.isSystem) {                 
-
-                    angular.forEach($scope.items, function (item) {                     
-
+                if (!column.isSystem) {
+                    angular.forEach($scope.items, function (item) {
                         try {
                             if (item[column.alias][0].mediaKey) {
-                                entityResource.getById(item[column.alias][0].mediaKey, "Media")
+                                mediaResource.getById(item[column.alias][0].mediaKey)
                                     .then(function (media) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
-                                        column.allowSorting = false;
-                                    }, function (err) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = '';
-                                        column.allowSorting = false;
-                                    });
+                                        item[column.alias] = (media != null && media.mediaLink != null) ? mediaHelper.getThumbnailFromPath(media.mediaLink) : '';
+                                        clearColumn(column);
+                                    }, (err) => console.log(err));
                             }
-                        } catch { }
-
-                        try {
                             if (item[column.alias].indexOf('umb://media/') === 0) {
-                                entityResource.getById(getIdFromUdi(item[column.alias]), "Media")
+                                mediaResource.getById(getIdFromUdi(item[column.alias]))
                                     .then(function (media) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = mediaHelper.resolveFileFromEntity(media, true);
-                                        column.allowSorting = false;
-                                    }, function (err) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = '';
-                                        column.allowSorting = false;
-                                    });
+                                        item[column.alias] = (media != null && media.mediaLink != null) ? mediaHelper.getThumbnailFromPath(media.mediaLink) : '';
+                                        clearColumn(column);
+                                    }, (err) => console.log(err));
                             }
-                        } catch { }
-
-                        try {
                             if (item[column.alias].indexOf('umb://document/') === 0) {
                                 entityResource.getById(getIdFromUdi(item[column.alias]), "Document")
                                     .then(function (document) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = document.name;
-                                        column.allowSorting = false;
-                                    }, function (err) {
-                                        notificationsService.removeAll();
-                                        item[column.alias] = '';
-                                        column.allowSorting = false;
-                                    });
+                                        if (document != null) {
+                                            item[column.alias] = document.name;
+                                            clearColumn(column);
+                                        }
+                                    }, (err) => console.log(err));
                             }
-
                         } catch { }
                     });
                 }
 
             });
+        }
+
+        function clearColumn(column) {
+            notificationsService.removeAll();
+            column.allowSorting = false;
         }
 
         function selectAll() {
