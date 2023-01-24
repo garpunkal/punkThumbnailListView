@@ -47,6 +47,10 @@
         vm.getIcon = function (entry) {
             return iconHelper.convertFromLegacyIcon(entry.icon);
         };
+
+        vm.isArrayFilter = function (o) {        
+            return Array.isArray(o); 
+        }
     }
 
     angular

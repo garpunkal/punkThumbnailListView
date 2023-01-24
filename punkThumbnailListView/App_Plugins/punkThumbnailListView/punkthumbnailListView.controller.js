@@ -29,7 +29,7 @@
         vm.dragEnter = dragEnter;
         vm.dragLeave = dragLeave;
         vm.onFilesQueue = onFilesQueue;
-        vm.onUploadComplete = onUploadComplete;
+        vm.onUploadComplete = onUploadComplete;       
         markAsSensitive();
 
         function activate() {
@@ -74,17 +74,17 @@
                                 else
                                     documents.push(item[column.alias])
 
-                                item[column.alias] = '';
+                                item[column.alias] = [];
 
                                 angular.forEach(documents, function (doc) {                                   
                                     entityResource.getById(getIdFromUdi(doc), "Document")
                                         .then(function (document) {
                                             if (document != null) {
-                                                item[column.alias] += '<span class="data-html">' + document.name + '</span>';                                                
+                                                item[column.alias].push(document.name);                                                
                                                 clearColumn(column);
                                             }
                                         }, (err) => console.log(err));
-                                });                                        
+                                });                                 
                             }
 
                         } catch { }
@@ -165,6 +165,7 @@
         function getIdFromUdi(udi) {
             return udi.substring(udi.lastIndexOf('/') + 1, udi.length);
         }
+
 
         activate();
     }
