@@ -49,7 +49,7 @@
                                 item[column.alias] = mediaHelper.getThumbnailFromPath(item[column.alias].src);
                                 clearColumn(column);
                             }
- 
+
                             if (item[column.alias][0].mediaKey) {
                                 mediaResource.getById(item[column.alias][0].mediaKey)
                                     .then(function (media) {
@@ -67,15 +67,25 @@
                             }
 
                             if (item[column.alias].indexOf('umb://document/') === 0) {
-                                entityResource.getById(getIdFromUdi(item[column.alias]), "Document")
-                                    .then(function (document) {
-                                        if (document != null) {
-                                            item[column.alias] = document.name;
-                                            clearColumn(column);
-                                        }
-                                    }, (err) => console.log(err));
-                            }
 
+                                var documents = [];
+                                if (item[column.alias].indexOf(','))
+                                    documents = item[column.alias].split(',');
+                                else
+                                    documents.push(item[column.alias])
+
+                                item[column.alias] = '';
+
+                                angular.forEach(documents, function (doc) {                                   
+                                    entityResource.getById(getIdFromUdi(doc), "Document")
+                                        .then(function (document) {
+                                            if (document != null) {
+                                                item[column.alias] += '<span class="data-html">' + document.name + '</span>';                                                
+                                                clearColumn(column);
+                                            }
+                                        }, (err) => console.log(err));
+                                });                                        
+                            }
 
                         } catch { }
                     });
