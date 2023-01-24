@@ -3,72 +3,69 @@
 
     function TableRelations(iconHelper) {
 
-        function link(scope, el, attr, ctrl) {
+        var vm = this;
 
-            scope.clickItem = function (item, $event) {
-                if (scope.onClick) {
-                    scope.onClick(item);
-                    $event.stopPropagation();
-                }
-            };
-
-            scope.selectItem = function (item, $index, $event) {
-                if (scope.onSelect) {
-                    scope.onSelect(item, $index, $event);
-                    $event.stopPropagation();
-                }
-            };
-
-            scope.selectAll = function ($event) {
-                if (scope.onSelectAll) {
-                    scope.onSelectAll($event);
-                }
-            };
-
-            scope.isSelectedAll = function () {
-                if (scope.onSelectedAll && scope.items && scope.items.length > 0) {
-                    return scope.onSelectedAll();
-                }
-            };
-
-            scope.isSortDirection = function (col, direction) {
-                if (scope.onSortingDirection) {
-                    return scope.onSortingDirection(col, direction);
-                }
-            };
-
-            scope.sort = function (field, allow, isSystem) {
-                if (scope.onSort) {
-                    scope.onSort(field, allow, isSystem);
-                }
-            };
-
-            scope.getIcon = function (entry) {
-                return iconHelper.convertFromLegacyIcon(entry.icon);
-            };
-        }
-
-        var directive = {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/App_Plugins/punkThumbnailListView/umb-table-relations.html',
-            scope: {
-                items: '=',
-                itemProperties: '=',
-                allowSelectAll: '=',
-                onSelect: '=',
-                onClick: '=',
-                onSelectAll: '=',
-                onSelectedAll: '=',
-                onSortingDirection: '=',
-                onSort: '='
-            },
-            link: link
+        vm.clickItem = function (item, $event) {
+            if (vm.onClick && !($event.metaKey || $event.ctrlKey)) {
+                vm.onClick({ item: item });
+                $event.preventDefault();
+            }
+            $event.stopPropagation();
         };
 
-        return directive;
+        vm.selectItem = function (item, $index, $event) {
+            if (vm.allowSelect !== false && vm.onSelect) {
+                vm.onSelect({ item: item, $index: $index, $event: $event });
+                $event.stopPropagation();
+            }
+        };
+
+        vm.selectAll = function ($event) {
+            if (vm.onSelectAll) {
+                vm.onSelectAll({ $event: $event });
+            }
+        };
+
+        vm.isSelectedAll = function () {
+            if (vm.onSelectedAll && vm.items && vm.items.length > 0) {
+                return vm.onSelectedAll();
+            }
+        };
+
+        vm.isSortDirection = function (col, direction) {
+            if (vm.onSortingDirection) {
+                return vm.onSortingDirection({ col: col, direction: direction });
+            }
+        };
+
+        vm.sort = function (field, allow, isSystem) {
+            if (vm.onSort) {
+                vm.onSort({ field: field, allow: allow, isSystem: isSystem });
+            }
+        };
+
+        vm.getIcon = function (entry) {
+            return iconHelper.convertFromLegacyIcon(entry.icon);
+        };
     }
 
-    angular.module('umbraco.directives').directive('umbTableRelations', TableRelations);
-
+    angular
+        .module('umbraco.directives')
+        .component('umbTableRelations', {
+            templateUrl: '/App_Plugins/punkThumbnailListView/umb-table-relations.html',
+            controller: TableRelations,
+            controllerAs: 'vm',
+            bindings: {
+                items: '<',
+                itemProperties: '<',
+                allowSelect: '<',
+                allowSelectAll: '<',
+                onSelect: '&',
+                onClick: '&',
+                onSelectAll: '&',
+                onSelectedAll: '&',
+                onSortingDirection: '&',
+                onSort: '&'
+            }
+        });
 })();

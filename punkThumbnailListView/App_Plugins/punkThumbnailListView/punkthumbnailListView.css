@@ -1,14 +1,18 @@
 ﻿
-.thumbnailListView .umb-content-list__details {
+.thumbnailListView .umb-content-list__span .umb-content-list__details {
     flex-grow: 1;
 }
 
-    .thumbnailListView .umb-content-list__details .umb-content-list__details-image {
+.thumbnailListView .umb-content-list__span  {
+    width: 100%
+}
+
+    .thumbnailListView .umb-content-list__span .umb-content-list__details .umb-content-list__details-image {
         text-align: right;
     }
 
 
-        .thumbnailListView .umb-content-list__details .umb-content-list__details-image img {
+        .thumbnailListView .umb-content-list__span .umb-content-list__details .umb-content-list__details-image img {
             object-fit: cover;
         }
 
