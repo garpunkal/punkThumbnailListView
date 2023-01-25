@@ -26,7 +26,7 @@ https://www.nuget.org/packages/punkThumbnailListView/
 
 ## Compatibility
 
-- Umbraco 9+ 
+- Umbraco 10+ 
 ## Screenshots
   
 ### ListView
