@@ -30,6 +30,9 @@
 		<None Include="..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms" Version="10.4.0" />
+	</ItemGroup>
+	<ItemGroup>
 		<None Include="..\LICENSE" Pack="true" PackagePath="" />
 		<None Include="..\logo.png" Pack="true" PackagePath="" />
 	</ItemGroup>

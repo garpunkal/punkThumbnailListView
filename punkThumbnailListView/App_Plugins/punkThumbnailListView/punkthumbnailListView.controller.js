@@ -44,7 +44,6 @@
                 if (!column.isSystem) {
                     angular.forEach($scope.items, function (item) {
                         try {
-
                             if (item[column.alias].src) {
                                 item[column.alias] = mediaHelper.getThumbnailFromPath(item[column.alias].src);
                                 clearColumn(column);
