@@ -18,7 +18,7 @@
 					<localize key="general_status">Status</localize>
 				</div>
 				<div class="umb-table-cell" ng-repeat="column in vm.itemProperties track by column.alias">
-					<div ng-switch on="column.header.toLowerCase().replace(/ /g,'')" class="full-width">
+					<div ng-switch on="column.header.toLowerCase().replaceAll(' ','')" class="full-width">
 						<div ng-switch-when="thumbnail|image|logo|listingimage|mainimage|heroimage" ng-switch-when-separator="|" class="full-width centered">
 							<button type="button" class="umb-table-head__link umb-table-head__link-image" ng-click="vm.sort(column.alias, column.allowSorting, column.isSystem)" ng-class="{'sortable':column.allowSorting}">
 								<span ng-bind="column.header"></span>
@@ -58,8 +58,8 @@
 				<div class="umb-table-cell" ng-repeat="column in vm.itemProperties track by column.alias">
 					<span title="{{column.header}}: {{item[column.alias].expression ? item[column.alias].expression({value: item[column.alias].value}) : item[column.alias]}}" class="umb-content-list__span">
 						<div ng-if="!column.isSensitive">
-							<div ng-switch on="column.header.toLowerCase().replace(/ /g,'')" class="umb-content-list__details">
-								<div ng-if="item[column.alias].indexOf('/umbraco/') !== -1" ng-switch-when="thumbnail|image|logo|listingImage|mainImage|heroImage" ng-switch-when-separator="|" class="umb-content-list__details-image">
+							<div ng-switch on="column.header.toLowerCase().replaceAll(' ','')" class="umb-content-list__details">
+								<div ng-if="item[column.alias].indexOf('/umbraco/') !== -1" ng-switch-when="thumbnail|image|logo|listingimage|mainimage|heroimage" ng-switch-when-separator="|" class="umb-content-list__details-image">
 									<img ng-src="{{item[column.alias] }}" alt="{{item.name}}" class="umb-avatar umb-avatar--xl" />
 								</div>
 								<div ng-switch-when="externalthumbnail|externalimage|externallogo|externallistingimage|externalmainimage|externalheroimage" ng-switch-when-separator="|" class="umb-content-list__details-image">
