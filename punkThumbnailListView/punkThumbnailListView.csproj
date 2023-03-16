@@ -18,7 +18,7 @@
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 
-	<ItemGroup>
+	<ItemGroup>  
 		<Content Include="App_Plugins\punkThumbnailListView\**\*.*">
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
