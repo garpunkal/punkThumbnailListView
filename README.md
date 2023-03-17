@@ -2,24 +2,37 @@
 
 [![NuGet release](https://img.shields.io/nuget/v/punkThumbnailListView.svg)](https://www.nuget.org/packages/punkThumbnailListView/)
 
-A ListView for Umbraco that allows you include extras: 
+A dynamic ListView for Umbraco that allows you automatically show images and nodes: 
 
-- A image with the field header using the following name: thumbnail|image|logo|listingimage|mainimage|heroimage.
+- An Umbraco image using the following listview header name: 
 
-- An external image with the field header using the following name: externalthumbnail|externalimage|externallogo|externallistingimage|externalmainimage|externalheroimage
+    - thumbnail
+    - image
+    - logo
+    - listingimage
+    - mainimage
+    - heroimage
 
-- A name field from a linked document(s).
+- An External image using the following listview header name: 
+
+    - externalthumbnail
+    - externalimage
+    - externallogo
+    - externallistingimage
+    - externalmainimage
+    - externalheroimage
+
+- Related Umbraco document(s) node name.
 
 It works with all the original functionality of ListView, including selections, sort and search. 
 
 ## Usage 
 
-Just create a new listview in Umbraco, add your custom fields for imagery or linked relations. 
-then use this path for a view: 
+Just create a new listview in Umbraco, add your custom fields and specify using the listview name as above. Use this path for the view within the listview
 
 `/app_plugins/punkThumbnailListView/punkthumbnailListView.html`
 
-It should display your images and relational titles in the listview. 
+It should display your images and titles within the listview. 
 
 ## Nuget
 
@@ -43,5 +56,6 @@ https://www.nuget.org/packages/punkThumbnailListView/
 This project is maintained by Gareth Wright and contributors. If you have a question or issue, please get in touch on [Twitter](https://twitter.com/garpunkal), or by raising an issue on GitHub.
 
 ## License
-Copyright © 2023 Gareth Wright, and other contributors
+Copyright © 2023 Gareth Wright, and other contributors.
+
 Licensed under the MIT License.
