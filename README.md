@@ -1,11 +1,14 @@
-# Thumbnail List View
+# punkThumbnailListView
 
-[![.github/workflows/release.yml](https://github.com/garpunkal/punkThumbnailListView/actions/workflows/release.yml/badge.svg)](https://github.com/garpunkal/punkThumbnailListView/actions/workflows/release.yml)
+[![NuGet release](https://img.shields.io/nuget/v/punkThumbnailListView.svg)](https://www.nuget.org/packages/punkThumbnailListView/)
 
-An app_plugin for Umbraco that allows you to view a ListView with the following extras:
+A ListView for Umbraco that allows you include extras: 
 
-- A image with the field alias: (thumbnail, image, logo, listingImage) 
-- A name field from a linked document.
+- A image with the field header using the following name: thumbnail|image|logo|listingimage|mainimage|heroimage.
+
+- An external image with the field header using the following name: externalthumbnail|externalimage|externallogo|externallistingimage|externalmainimage|externalheroimage
+
+- A name field from a linked document(s).
 
 It works with all the original functionality of ListView, including selections, sort and search. 
 
@@ -26,7 +29,8 @@ https://www.nuget.org/packages/punkThumbnailListView/
 
 ## Compatibility
 
-- Umbraco 10+ 
+- Umbraco 10.4+
+
 ## Screenshots
   
 ### ListView
@@ -34,3 +38,10 @@ https://www.nuget.org/packages/punkThumbnailListView/
 
 ### DataType
 ![DataType setup](https://raw.github.com/garpunkal/punkThumbnailListView/main/datatype.jpg)
+
+# Contact
+This project is maintained by Gareth Wright and contributors. If you have a question or issue, please get in touch on [Twitter](https://twitter.com/garpunkal), or by raising an issue on GitHub.
+
+## License
+Copyright © 2023 Gareth Wright, and other contributors
+Licensed under the MIT License.
