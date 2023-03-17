@@ -1,6 +1,16 @@
 {
+  "Title": "punkThumbnailListView",
+  "Description": "A list view for Umbraco that retrieves images and related content.",
   "Category": "Editor Tools",
+  "Tags": [ "ListView", "Images", "Related Content" ],
   "LicenseTypes": [ "Free" ],
-  "PackageType": "Package"
+  "PackageType": "Package",
+  "AuthorDetails": {
+    "Name": "Gareth Wright",
+    "Url": "https://garpunkal.dev",
+    "ImageUrl": "https://gravatar.com/avatar/e81a3e793038ca4c8062a275ee210a94?s=600",
+    "SyncContributorsFromRepository": true
+  },
+  "DocumentationUrl": "https://github.com/garpunkal/punkThumbnailListView",
+  "IssueTrackerUrl": "https://github.com/garpunkal/punkThumbnailListView/issues"
 }
-  
