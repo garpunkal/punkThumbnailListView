@@ -8,9 +8,19 @@
   "AuthorDetails": {
     "Name": "Gareth Wright",
     "Url": "https://garpunkal.dev",
-    "ImageUrl": "https://gravatar.com/avatar/e81a3e793038ca4c8062a275ee210a94?s=600",
+    "ImageUrl": "https://cloud.squidex.io/api/assets/garpunkaldev/6e2fa349-4700-4197-b993-7605df7cac07",
     "SyncContributorsFromRepository": true
   },
   "DocumentationUrl": "https://github.com/garpunkal/punkThumbnailListView",
-  "IssueTrackerUrl": "https://github.com/garpunkal/punkThumbnailListView/issues"
+  "IssueTrackerUrl": "https://github.com/garpunkal/punkThumbnailListView/issues",
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.github.com/garpunkal/punkThumbnailListView/main/listview.jpg",
+      "Caption": "ListView"
+    },
+    {
+      "ImageUrl": "https://raw.github.com/garpunkal/punkThumbnailListView/main/datatype.jpg",
+      "Caption": "DataType"
+    }
+  ]
 }
