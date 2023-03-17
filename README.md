@@ -55,7 +55,3 @@ https://www.nuget.org/packages/punkThumbnailListView/
 # Contact
 This project is maintained by Gareth Wright and contributors. If you have a question or issue, please get in touch on [Twitter](https://twitter.com/garpunkal), or by raising an issue on GitHub.
 
-## License
-Copyright © 2023 Gareth Wright, and other contributors.
-
-Licensed under the MIT License.
